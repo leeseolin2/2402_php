@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 
+        form 태그 : 정보를 제출하기 위한 태그(action에는 정보를어디저장할지)
+        
+     -->
+    <form action="">
+        <!--
+            <label>태그
+                입력받는 필드를 설명할 때 사용하는 태그
+                <input>태그의 id속성값과 <label>태그의 form값과 같은값을 설정
+             input 태그 : 다양한 방법으로 데이터를 받기위한 태그  
+          <속성> 
+           text : 일반적인 텍스트를 입력할 수 있는 값 -->
+
+        <label for="input-id">ID</label>
+        <!-- type="text" : 일반적인 텍스트를 입력할 수 있는값 -->
+        <input type="text" id="input-id" required placeholder="ID를 입력하세요.">
+        <br>
+        <label for="input-password">PW</label>
+        <!-- type="password" : 패스워드를 입력할 수 있는 값 -->            
+        <input type="password" name="" id="input-password" required>
+        <br>
+        <!-- type="email" : 이메일을 입력하고 형식체크 -->
+        <input type="email" readonly value="이메일">
+        <br><br>
+
+        <input type="checkbox" name="food" id="chk-1">
+        <label for="chk-1">돈까스</label>
+        <br>
+        <input type="checkbox" name="food" id="chk-2">
+        <label for="chk-2">우동</label>
+        <br>
+        <input type="checkbox" name="food" id="chk-3">
+        <label for="chk-3">라면</label>
+        <br><br>
+
+        <input type="radio" name="fruit" id="radio-1">
+        <label for="radio-1">사과</label>
+        <br>
+        <input type="radio" name="fruit" id="radio-1">
+        <label for="radio-1">바나나</label>
+        <br>
+        <input type="date">
+        <br>
+        <input type="range" min="0" max="10">
+        <br>
+        <input type="number" min="0" max="10">
+        <br>
+
+        <!--  input button은 요즘은 잘 안쓴다 -->
+        <!-- <input type="button" value="인풋버튼">
+        <br>
+        <input type="submit" value="인풋 서브밋">
+        <br>
+        <input type="reset" value="인풋 reset"> -->
+        <br>
+        <textarea  cols="30" rows="10"></textarea>
+        <br>
+        <select name="poketmon" id="poketmon">
+         <option value="0">피카츄</option>
+         <option value="1">라이츄</option>
+         <option value="2">파이리</option>
+        </select>
+        <br>
+        <fieldset>
+            <legend>정보 입력</legend>
+            <label for="id">ID</label>
+            <input type="text">
+        </fieldset>
+        <br>
+        <button type="button">button</button>
+        <button type="reset">reset</button>
+        <button type="submit">전송</button>
+
+
+
+    </form>
+</body>
+
+</html>
