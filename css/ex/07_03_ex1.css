@@ -1,0 +1,74 @@
+.color-main {
+    color: pink;
+}
+
+.color-hex {
+    color: #ffc0cb;
+}
+
+.color-rgb {
+    color: rgb(255, 192, 203);
+}
+
+.color-rgba {
+    color: rgba(255, 192, 203, 0.5);
+}
+
+.color-hsla {
+    color: hsl(350, 100%, 88%);
+}
+
+#p-center {
+    text-align: center;
+}
+
+#p-left {
+    text-align: left;
+}
+
+#p-right {
+    text-align: right;
+}
+
+.div-center {
+    width: 200px;
+    height: 200px;
+    background-color: aliceblue;
+}
+
+.div-center p {
+    text-align: center;
+    line-height: 200px;
+    /* 줄간격 조절을 통해 중앙으로 정렬*/
+}
+
+/* 영어 첫번째 글자를 대문자로 변환 */
+.capitalize {
+    text-transform: capitalize;
+}
+
+/* 텍스트를 영어 대문자로 변환 */
+.uppercase {
+    text-transform: uppercase;
+}
+
+/* 텍스트를 영어 소문자로 변환 */
+.lowercase {
+    text-transform: lowercase;
+}
+
+/* 자간 설정 */
+.letter-spacing {
+    letter-spacing: 1.5rem;
+}
+
+/* 단어 간격 설정 */
+.word-spacing {
+    word-spacing: 1.5rem;
+}
+
+/* 그림자 설정 */
+.shadow {
+    text-shadow: 5px 5px 10px red;
+    /* 가로위치, 세로위치, 그림자 크기, 색상 */
+}
