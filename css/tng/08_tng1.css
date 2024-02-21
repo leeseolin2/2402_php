@@ -1,0 +1,75 @@
+* {
+    box-sizing: border-box;
+}
+
+
+
+.box-1 {
+    width: 700px;
+    height: 200px;
+    background-color: black;
+    margin: auto;
+}
+
+.box-1 h1 {
+    color: #fff;
+    padding: 20px
+}
+
+.box-1 p {
+    color: orange;
+    padding-left: 20px;
+    margin-top: 50px;
+    line-height: 25px;
+
+}
+
+.box-2 {
+    width: 700px;
+    height: 420px;
+    border: 1px solid gray;
+    margin: 15px auto;
+    margin-bottom: 0;
+
+
+
+}
+
+.mbox-in {
+    text-align: center;
+    font-weight: 900;
+    line-height: 30px;
+}
+
+.mini-box {
+    background-color: #000;
+    color: #fff;
+    padding: 10px;
+
+}
+
+.red {
+    color: red;
+    font-size: 30px;
+}
+
+span {
+    color: blue;
+}
+
+.bbox {
+    width: 700px;
+    height: 230px;
+    border: 1px solid gray;
+    text-align: center;
+    font-weight: 900;
+    margin:auto;
+    
+
+
+}
+
+p {
+    font-size: 20px;
+    line-height: 40px;
+}

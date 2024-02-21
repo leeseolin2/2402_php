@@ -1,0 +1,17 @@
+.ul-1{
+    list-style-type: none;
+    font-weight: 700;
+   
+}
+
+
+span {
+    font-size: 2rem;
+    color: brown;
+    
+}
+
+li {
+    line-height: 50px;
+    
+}

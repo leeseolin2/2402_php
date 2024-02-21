@@ -1,0 +1,19 @@
+.div-border{
+    width: 100px;
+    height: 100px;
+    border: 5px solid palevioletred;
+}
+.div-radius{
+    width: 100px;
+    height: 100px;
+    border:5px solid palevioletred;
+    border-radius: 100px;
+}
+.div-side-radius{
+    width: 100px;
+    height: 100px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border: 5px solid palevioletred;
+    margin-top: 10px;
+}
