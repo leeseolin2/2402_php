@@ -1,0 +1,28 @@
+div{
+    border: 3px solid #000;
+    margin:10px;
+}
+
+.none{
+    display: none;
+}
+
+.block{
+    display: block;
+}
+
+.inline{
+    display: inline;
+}
+
+.inline-block{
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+}
+
+span{
+    width: 200px;
+    display: inline-block;
+    border: 3px solid #000;
+}

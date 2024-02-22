@@ -1,0 +1,46 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.all-box {
+    width: 450px;
+    height: 450px;
+    border: 2px solid black;
+    margin: 10px;
+}
+
+.box-1 {
+    width: 130px;
+    height: 130px;
+    border: 2px solid black;
+    margin: 10px;
+    position: relative;
+    top: 20px;
+    left: 30px;
+
+
+}
+
+.box-2 {
+    width: 130px;
+    height: 130px;
+    border: 2px solid black;
+    margin: 10px;
+    position: relative;
+    top: -70px;
+    left: 210px;
+
+
+}
+
+.box-3 {
+    width: 130px;
+    height: 130px;
+    border: 2px solid black;
+    margin: 10px;
+    position: relative;
+    top: -20px;
+    left: 30px;
+}
