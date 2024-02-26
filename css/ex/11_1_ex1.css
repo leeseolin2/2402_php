@@ -1,0 +1,25 @@
+div {
+    background-image: url('../img/KakaoTalk_20240223_113850529.jpg');
+    width: 500px;
+    height: 500px;
+    background-size: cover;
+    
+}
+div:hover {
+    animation: test 2s forwards;
+    /* 마우스를 올리면 확대 
+    forwards : 마우스를 땔때까지 커져잇음
+    */
+}
+
+
+@keyframes test {
+    from {     /* scale : 점점 확대됨 */
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(2);
+    }
+}
+

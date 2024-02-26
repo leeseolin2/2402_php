@@ -1,0 +1,36 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+ul {
+    list-style-type: none;
+    display: inline-block;
+    box-shadow: 0px 5px 5px 5px rgb(46, 45, 45);
+    margin: 20px;
+    /* box-shadow: -8px 8px 10px black; */
+
+
+}
+
+li {
+    width: 3.5rem;
+    float: left;
+    background-color: gainsboro;
+    padding: 10px;
+    text-align: center;
+}
+
+ul :not(:nth-last-child(1)) {
+    border-right: 2px solid greenyellow;
+}
+
+ul :not(:nth-last-child(1)):hover {
+    background-color: #4d4d4d;
+}
+
+ul > li:last-child:hover{
+    background-color: red;
+    color: #fff;
+}
