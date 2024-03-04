@@ -107,9 +107,13 @@ ORDER BY birth_date DESC, hire_date ASC;
 -- 사원의 정보를 성과 이름 오름차순으로 정렬해서 조회
 SELECT *
 FROM employees
-WHERE (hire_date >= 19900101 OR hire_date <= 19951231)
-AND gender = 'F'
+WHERE 
+    (hire_date >= 19900101 OR hire_date <= 19951231)
+  AND gender = 'F'
 ORDER BY last_name, first_name;
+
+-- DISTINCT 키워드 : 검색 결과에서 중복되는 레코드 없이 조회
+SELECT DISTINCT emp_no FROM salaries WHERE emp_no = 10001;
 
 
 
