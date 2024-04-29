@@ -1,0 +1,45 @@
+@font-face {
+    font-family: 'TTHakgyoansimMonggeulmonggeulR';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2402_keris@1.0/TTHakgyoansimMonggeulmonggeulR.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+body {
+    font-family: 'TTHakgyoansimMonggeulmonggeulR';
+}
+nav {
+    background-color: #B3C8CF;
+}
+
+
+footer {
+    background-color: #B3C8CF;
+}
+
+
+main {
+    width: 95%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    padding-bottom:5rem;
+}
+
+.dropdown-menu {
+    background-color: #BED7DC;
+    color:#F1EEDC;
+}
+/* login */
+.loginForm {
+    width: 350px;
+    height: 500px;
+    margin: auto;
+    padding-top: 15rem;
+
+
+}
+
+.flex {
+    display: grid;
+    place-items: center;
+}
