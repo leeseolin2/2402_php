@@ -16,16 +16,24 @@ footer {
     background-color: #B3C8CF;
 }
 
-/* button {
+
+.text-center img {
     cursor: pointer;
-} */
-main {
+}
+.btn {
+    background-color: #B3C8CF;
+}
+
+.btn:hover {
+    background-color: #91adb8;
+}
+main{
     width: 95%;
     margin: 0 auto;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    padding-bottom:5rem;
-    justify-items:center;
+    gap: 1rem;
+    padding-bottom: 5rem;
 }
 
 .dropdown-menu {
