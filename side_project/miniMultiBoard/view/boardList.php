@@ -38,14 +38,14 @@
                             </ul>
                         </li>
                     </ul>
-                    <a href="./login.html" class="navbar-nav nav-link text-light" role="button">Log out</a>
+                    <a href="/user/logout" class="navbar-nav nav-link text-light" role="button">Log out</a>
                 </div>
             </div>
         </nav>
     </header>
     <div class="text-center mt-5 mb-5">
         <h1 class="animate__animated animate__bounce animate__delay-2s">자유게시판</h1>
-        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFAAAABQCAYAAACOEfKtAAAACXBIWXMAAAsTAAALEwEAmpwYAAAE60lEQVR4nO2czYscVRDAO6JC9G9Q1IMQ/Ba9iUY8iSCo8ZOgIOrV4yoYspLEiBcVTx5C7iuSzKsOmPWwJjFd1eN0VUfXjz9hV93NOVmxpXpi2EWne2Z6uuv1bBcUDLvTUO837/V7Va+qgqCTTjrpZHpxg8EtLrr0MGDyCqAsAvFJh7LkSL4FFFTVz/q3/H/Eh/W7py+mD+mzwW6TpdXVm12cPAXERwElciRbQJJNo/qsI7kIxEdCkicHg8FNwbxKL5Z7HPHHQLw+LbByoLzpiL90mD4WzIMczrIbepG85JClLmijlRmID6gNQdsky7I9IcpBQP6teXD/0V9dzK+pTUEbpIfJ/UD8vQfgdi5v5PNnokv3BT5vDoD8SZVNoX6IclXfw95tNm4wuF13VGtAE4D8Iez/eFfggwAmzwLyZWsoE0Mk3gxJnrGFF/MbPi/ZMfQvQHnbBF6IsuCQ//YAQrWZqGNAWWwUnkP5wHrgMHPl9xuBB8Svz8PMg/+ZiS7it+rfMPS94cGAoQ6IJFu1bSx6VHHEG9aDhLoV+XKP0jtnCk8Pnm0650FliNJXx2BmANXDMB8UNasO5aPZwOun96oLtOsAkmypX18JnkYwgOQ768GA2Szk85WiOHlIyoOBgKH2iF+dCp4GIj2J52Wms5Dkl6mCshpJtjYePFGHyQsTA7QJw4unyslk8Pr8qL3R4pXq1esks+8La4OBeE0vha7pujlAks8mCM3LH9YGhygL237Q96zt0R9xrKuA4aW3tbGShSTv/GuTfra2J1eU/aUA84wBa0PJW4AflgP0JGgQ+giQ+EIhvLNpeqsvfm/oIUBlsxRFe0e//zRLygNDwVOAQ+UHRgJUv8/eQPEaoHpoRe+/RWsDwXOAgHxoNEDik+YGkt8AHfKJ0e9A4q+tDQTvAcpXBUuYz9ZrAK+ph6FAShWTfdcBYrJvvGdkoW63zyF/Y3gG5ANBzRLG8mKtY0CJ5hpgr+44ZjHA2pfwugYG6lrCmp5huoS7TUQqbiLdMSardIzpDtJS7SDduXJSzZXT8ql6NxFp/UG6MFshr1vrwllZwfK9UhjOyiHmtWf2v3To4QzUVI+gTLRwz9pQ8BTgWLnUWvVobij5CdBF/EQpQL26cyS/Wxsb+netubaysnJjKcDhMpbPPTB4XQMDebWnBz+oQ/40GFdOx8kj1gaDZ6pHvLEBDmeh1tvaGw4eqCMZBN7F1ahFGstz0yZYrpobTy1NsFTRSm/rAYDPvm+ZaIK1I17ZtbMP5VzlVgF5tw1P/GNoUpGvbI+KVxIgOW4+IGpa+WgwK7nmnXgRZIAG1BHHMy31UjnV/+k2QPlzF8DbPIVyR1CHaCloy0v8s2J4suWQn64F3nWIKAfnteAaKH0zaEKG96/2g64r+tMMROR352EmmjSd2NE/gVr9TrRre7JzY+HN1s084o3aN4xJjjiuTedElP7M+yLMpK8CyXGf3b68+RjKMe+aj22XM3F6N5AsewjvnPr1QRsky7I9eZoIys/W4DSm6TB9uTUNGLeLBiK1WFnrbRufcSSDENPnW9kCtKQJ7Vp90HhjrprQFjTx2a+Fe9oqtMqmM3yWL+hBOIyTx8e+t50nWYqivWEsD+a5zciHNIFx2HRblvOc7WHe9nLenBv5hH5Hv6vPlCb6dNJJJ50EhfIPozZcZrV2V2oAAAAASUVORK5CYII=" fill="currentColor"
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAACXBIWXMAAAsTAAALEwEAmpwYAAADUklEQVR4nO2azU4UQRDHm4v4DupBBL2I32jUqxACr6Hio/i1ISai7+BFtnsYD0ZJgJ2qnTBVu8hpRSV4E/SCJKIkYwrwIxiCOzM9s7M7v6SSTXaT3v+/q6drqlupgoKCgoICq0z69VMaecwAPzVArzTykkb6ooG/b4d8Rl7a/e6J/HaqWjup8oxBOmuQShroo0EOIwXQikZ+WIbgjMoDYRh2OcijGrkSWfS+QXMGaETGUK3IZDW4pJGqyQvfmxUM2qtfUK3C9PT0YYP8yCBvWRf/J7Y00LjrNrozFW+A+gwSpSh877II3Ln5E9mI9/iyAV7NTvxOyA5S9vh6quI18pAB3sha/G8TgL6WgQZTEe9A7YoMmLXofwJ4w3omGKA+jfQ5c7H7m7Dm+As9VsS7bqNbHjqZizxoOSDPW9kdzM5WF+YjqJSoeAeDiynv83Fja7JSO5+I+DAMu1Kp8JJfCpVEDHCQR638QSDHeHzExfpRg+zaGMPxguHYBmgrLzYcivBfYzz33xyzkwk0G2/2q3zOVoruHcvWOFNevT+yAQaplHcDNNC9yAboOM2MVjEAeTlyG8tY+lNpGiBR9oLe5me/GtxpFwMc5NtNG2CkgdkmBhigx81nANDrdjFAI79sPgOQPrSNAUDvmjcAeC1OhacSJlbFCLwawQDajFvhJU3UilEjfWt6MFMYwJGWgKSpjSyQ2dfIL9JcAu/b5iGIvNS0Abrjt0Ho9EIIeax9DOBbHf0y5EY9PjNAKx37OizI5YT8G0B3VVSMXzvd0S0xYftmRk6bohpoRsXFAI1Ymp3tijFWhXdg+vNQIgcjBhhspai9iNkS/xu5k5O3ozFp6ask0UDjLSDs/wL4gUoa1210y9FzDsT7zxYXDyVugCAVVdROURqhkT+VsXZc2UT7NGCQ1ltw5jd0Nbiq0qAMNNha94Ro3fHohkoT7dOApFzW4uXOklOhayoLHH+hJ9MHI7Bvfc3/5+WpUpp1gkb+IVudtad9FKTwsHWZYs96n5Wr+KpVcbxgeOdPJjzrQDOJ1PZpMeXV+w3QfWlIxEj1ZbngIK/lKs+UvaBX+nIGeUIOKg3y2+0bp3L4ArQpnzVyY/e7Ce3RzUhn+gUFBQUFBaoZfgLEwut6CPdWlgAAAABJRU5ErkJggg==" fill="currentColor"
             class="bi bi-chat-square-heart-fill" viewBox="0 0 16 16" data-bs-toggle="modal"
             data-bs-target="#modalInsert">
             <path
@@ -54,7 +54,7 @@
     </div>
     <main>
         <div class="card">
-            <img src="./img/romi1.jpg" class="card-img-top" alt="cat">
+            <img src="/view/img/romi1.jpg" class="card-img-top" alt="cat">
             <div class="card-body">
                 <h5 class="card-title">Card title</h5>
                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
@@ -63,7 +63,7 @@
             </div>
         </div>
         <div class="card">
-            <img src="./img/romi2.jpg" class="card-img-top" alt="cat">
+            <img src="/view/img/romi2.jpg" class="card-img-top" alt="cat">
             <div class="card-body">
                 <h5 class="card-title">Card title</h5>
                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
@@ -72,7 +72,7 @@
             </div>
         </div>
         <div class="card">
-            <img src="./img/romi3.jpg" class="card-img-top" alt="cat">
+            <img src="/view/img/romi3.jpg" class="card-img-top" alt="cat">
             <div class="card-body">
                 <h5 class="card-title">Card title</h5>
                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
@@ -81,7 +81,7 @@
             </div>
         </div>
         <div class="card">
-            <img src="./img/romi.jpg" class="card-img-top" alt="cat">
+            <img src="/view/img/romi.jpg" class="card-img-top" alt="cat">
             <div class="card-body">
                 <h5 class="card-title">Card title</h5>
                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
@@ -90,7 +90,7 @@
             </div>
         </div>
         <div class="card">
-            <img src="./img/romi.jpg" class="card-img-top" alt="cat">
+            <img src="/view/img/romi.jpg" class="card-img-top" alt="cat">
             <div class="card-body">
                 <h5 class="card-title">Card title</h5>
                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
@@ -99,7 +99,7 @@
             </div>
         </div>
     </main>
-    <footer class="fixed-bottom  text-center text-light p-3">Copyright</footer>
+    <footer class="fixed-bottom  text-center text-light p-3">Copyright by 이서린</footer>
     <!-- 상세 모달 -->
     <div class="modal" tabindex="-1" id="modalDetail">
         <div class="modal-dialog">

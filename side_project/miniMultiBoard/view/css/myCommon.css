@@ -27,6 +27,7 @@ footer {
 .btn:hover {
     background-color: #91adb8;
 }
+/* boardList */
 main{
     width: 95%;
     margin: 0 auto;
@@ -40,6 +41,8 @@ main{
     background-color: #BED7DC;
     color:#F1EEDC;
 }
+
+
 /* login */
 .loginForm {
     width: 350px;
