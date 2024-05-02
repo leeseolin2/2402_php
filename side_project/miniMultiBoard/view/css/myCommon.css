@@ -4,6 +4,7 @@
     font-weight: normal;
     font-style: normal;
 }
+
 body {
     font-family: 'TTHakgyoansimMonggeulmonggeulR';
 }
@@ -20,8 +21,11 @@ footer {
 .text-center img {
     cursor: pointer;
 }
+
+
 .btn {
     background-color: #B3C8CF;
+    font-family: 'TTHakgyoansimMonggeulmonggeulR';
 }
 
 .btn:hover {
