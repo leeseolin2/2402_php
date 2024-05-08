@@ -3,6 +3,7 @@ namespace router;
 
 use controller\UserController;
 use controller\BoardController;
+use controller\UserInformation;
 
 // 라우터 : 유저의 요청을 분석해서 해당 Controller로 연결해주는 클래스
 class Router {
@@ -60,6 +61,17 @@ class Router {
             // 이메일 중복 체크
             if($httpMethod === "POST") {
                 new UserController("chkEmailPost");
+            }
+        } else if ($url === "board/delete") {
+            // 게시글 삭제 처리
+            if($httpMethod === "POST"){
+                new BoardController("deletePost");
+            }
+        } else if ($url === "user/information") {
+            if($httpMethod === "GET"){
+                new UserInformation("user_information");
+            } else{
+                new UserInformation("ChangingInformation");
             }
         }
 

@@ -56,5 +56,50 @@ class UsersModel extends Model {
             exit;
         }
     }
+
+    // 회원정보 수정
+    public function updateUserInfo($paramArr){
+        try {
+            $sql = 
+            " UPDATE users "
+            ." SET "
+            ." u_name =:u_name "
+            ." ,u_pw = :u_pw "
+            ." ,updated_at = NOW() "
+            ." WHERE "
+            ." u_id =:u_id "
+            ;
+            $stmt = $this->conn->prepare($sql);
+            $stmt->execute($paramArr);
+            
+            return $stmt->rowCount();
+        } catch (\Throwable $e) {
+            echo "UsersModel -> updateUserInfo(), ".$e->getMessage();
+            exit;
+        }
+    }
+    // 회원정보
+   public function userList($paramArr){
+    try {
+        $sql = 
+        " SELECT "
+        ." u_name "
+        ." ,u_email "
+        ." FROM "
+        ." users "
+        ." WHERE"
+        ." u_id = :u_id "
+        ;
+        $stmt = $this->conn->prepare($sql);
+        $stmt->execute($paramArr);
+        $result = $stmt->fetchAll();
+
+        return $result; // 결과를 반환합니다.
+    } catch (\Throwable $e) {
+        echo "UsersModel ->userList,".$e->getMessage();
+        exit;
+    }
+}
+
 }
 

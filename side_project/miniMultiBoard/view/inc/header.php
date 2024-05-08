@@ -25,6 +25,7 @@
                             </ul>
                         </li>
                     </ul>
+                    <a href="/user/information" class="navbar-nav nav-link text-light" role="button">회원정보수정</a>
                     <a href="/user/logout" class="navbar-nav nav-link text-light" role="button">Log out</a>
                 </div>
             <?php

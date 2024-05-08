@@ -44,12 +44,23 @@ class Controller {
 
     // 뷰 OR 로케이션 처리용 메소드
     private function callView($path) {
-        if(strpos($path, "Location:") === 0) {
+        if ($path === null) {
+            // $path가 null인 경우 처리할 내용 추가
+            // 예를 들어, 로그로 경고 메시지 기록
+            error_log("View path is null");
+            return;
+        }
+        
+        if (strpos($path, "Location:") === 0) {
             header($path);
         } else {
             require_once("view/".$path);
         }
     }
+    
+    
+    
+
 
     // 유저 권한 체크용 메소드
     private function checkauthorization(){

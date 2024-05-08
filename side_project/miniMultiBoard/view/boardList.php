@@ -53,17 +53,17 @@
             <div class="modal-content">
                 <form action="">
                     <div class="modal-header">
-                        <h5 class="modal-title">개발자입니다.</h5>
+                        <h5 class="modal-title"></h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                        <p>힘들다..</p>
+                        <p></p>
                         <br>
                         <img src="" class="card-img-top">
                     </div>
                     <div class="modal-footer justify-content-between">
                         <div>
-                        <button id="my-btn-delete" type="button" class="btn ">삭제</button>
+                        <button id="my-btn-delete" type="button" class="btn" data-bs-dismiss="modal">삭제</button>
                         </div>
                         <button type="button" class="btn" data-bs-dismiss="modal">닫기</button>
                     </div>
