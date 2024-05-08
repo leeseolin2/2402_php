@@ -33,6 +33,11 @@ class UserInformation extends Controller
         "u_name" => isset($_POST["u_name"]) ? $_POST["u_name"] : ""
     ];
     
+    // 사용자 정보 가져오기
+    $userInfo = new UsersModel();
+    $paramArr = ["u_id" => $_SESSION["u_id"]];
+    $userData = $userInfo->userList($paramArr);
+    
     // 유효성 체크
     $resultValidator = UserValidator::chkValidator($requestData);
     if (count($resultValidator) > 0) {
@@ -40,10 +45,6 @@ class UserInformation extends Controller
         return "information.php";
     }
     
-    // 사용자 정보 가져오기
-    $userInfo = new UsersModel();
-    $paramArr = ["u_id" => $_SESSION["u_id"]];
-    $userData = $userInfo->userList($paramArr);
 
     if (!empty($userData)) {
         // 비밀번호 암호화
