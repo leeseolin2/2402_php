@@ -3,6 +3,7 @@
 // use GuzzleHttp\Psr7\Request;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
+use App\Http\Controllers\TestController;
 
 /*
 |--------------------------------------------------------------------------
@@ -105,6 +106,34 @@ Route::get('/send', function() {
 
 //     return view('send')->with(['gender' => '무성', 'name' =>'홍길동', 'data' => $arr]);
 // }); 
+
+// ---------------
+// 컨트롤러 연결
+// ---------------
+// 커맨드로 컨트롤러 생성 : php artisan make:controller 컨트롤러명
+Route::get('/test', [TestController::class, 'index']);
+// TestController->create() : get
+Route::get('/test/create', [TestController::class, 'create']);
+
+
+// 리소스 라우터
+use App\Http\Controllers\TaskController;
+Route::resource('task', TaskController::class);
+
+
+// --------------------
+// 블레이드 템플릿 연습용
+// --------------------
+use App\Http\Controllers\EduContoller;
+use App\Http\Controllers\UserController;
+
+Route::get('/edu', [EduContoller::class, 'index']);
+
+// -----------------
+// DB 관련 연습용
+// -----------------
+Route::get('/user', [UserController::class, 'eduUser']);
+
 
 
 
