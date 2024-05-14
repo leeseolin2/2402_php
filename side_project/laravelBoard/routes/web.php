@@ -18,12 +18,23 @@ use Illuminate\Support\Facades\Route;
 // --------------
 // 유저 관련
 // --------------
+// 로그인
 Route::get('/', function () {
     return view('login');
 })->name('get.login');
 
 Route::post('/login',[UserController::class, 'login'])->name('post.login');
 Route::get('/logout', [UserController::class, 'logout'])->name('logout');
+
+// 회원가입
+Route::get('/regist', function() {
+    return view('regist');
+})->name('regist.index');
+
+Route::post('/regist', [UserController::class, 'regist'])->name('regist.store');
+
+// 이메일 체크
+Route::post('/user/chk', [UserController::class, 'emailChk']);
 
 // -------------
 // 게시판 관련

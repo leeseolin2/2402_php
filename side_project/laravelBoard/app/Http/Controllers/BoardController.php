@@ -3,9 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Models\Board;
+use App\Models\BoardName;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Log;
+
+use function PHPSTORM_META\type;
 
 class BoardController extends Controller
 {
@@ -25,7 +28,12 @@ class BoardController extends Controller
         // 게시글 조회
         $resultBoardList = Board::where('type', $type)->orderBy('created_at', 'DESC')->get();
 
-        return view('boardIndex')->with('data',$resultBoardList);
+        // 게시판 이름 조회
+        $resultBoardName = BoardName::select('name', 'type')
+                                    ->where('type', $type)
+                                    ->first();
+
+        return view('boardIndex')->with('data',$resultBoardList)->with('boardNameInfo', $resultBoardName);
     }
 
     /**
@@ -46,12 +54,16 @@ class BoardController extends Controller
      */
     public function store(Request $request)
     {   
+        // 파일 서버에 저장
+        $filePath = $request->file('file')->store('img');
+
+        // insert 데이터
         $insertData = $request->only('title', 'content', 'type');
         $insertData['user_id'] = Auth::id();
-        $insertData['img'] = '/img/romi1.jpg'; // TODO수정
+        $insertData['img'] = "/".$filePath; 
 
-        $resultInsert = Board::create($insertData);
-        return redirect()->route('board.index');
+        Board::Create($insertData);
+        return redirect()->route('board.index',['type' => $request->type]);
     }
 
     /**
@@ -103,6 +115,11 @@ class BoardController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Board::destroy($id);
+        $responseData = [
+            'errorFlg' => false
+            ,'deletedId' => $id
+        ];
+        return response()->json($responseData);
     }
 }
