@@ -4,32 +4,21 @@
 <!-- props : 자식 컴포넌트에게 props 속성을 이용해서 데이터를 전달 -->
    <HeaderComponent :navList="navList"/> 
     <!-- 상품리스트 -->
-    <div>
-        <div v-for="item in products" :key="item.productName">
-            <h4 @click="myOpenModal(item)">{{ item.productName }}</h4>
-            <p>{{ item.price }} 원</p>
-        </div>
-        <!-- <div>
-            <h4 @click="myOpenModal(products[1])">{{ products[1].productName }}</h4>
-            <p>{{ products[1].price }}</p>  -->
-            <!-- <button @click="products[1].price += 1000">가격증가</button> -->
-        <!-- </div>
-        <div @click="myOpenModal(products[2])">
-        <h4>{{ products[2].productName }}</h4>
-        <p>{{ products[2].price }}</p>
-        </div> -->
-        <!-- <button @click="products[2].price += 1000">가격증가</button> -->
-    </div>
-
+    <ListComponent :products="products"  @myOpenModal="myOpenModal">
+        <!-- slot : 자식쪽에서 <slot></slot> 부분에 전달하여 자식컴포넌트에서 렌더링처리 -->
+        <h3>부무쪽에서 정의한 슬롯</h3>
+    </ListComponent>
     <!-- 모달 -->
-    <ModalDetail :product="product" :flgModal ="flgModal"/>
+    <!-- :자식한테주는거 = App.vue가 가지고있는거 -->
+    <ModalDetail :product="product" :flgModal="flgModal" @myCloseModal="myCloseModal" />
     
 </template>
 
 <script setup>
-import { ref, reactive } from 'vue'
+import { ref, reactive, provide } from 'vue'
 import HeaderComponent from './components/HeaderComponent.vue'; // 자식 컴퓨넌트 import
 import ModalDetail from './components/ModalDetail.vue'; // 자식 컴퓨넌트 import
+import ListComponent from './components/ListComponent.vue'; // 자식 컴퓨넌트 import
 
 // ------------
 // 데이터 바인딩
@@ -65,9 +54,27 @@ const products = reactive([
 const flgModal = ref(false); // 모달 표시용 플래그
 let product = reactive({});
 function myOpenModal(item) {
-    flgModal.value = !flgModal.value;
+    flgModal.value = true;
     product = item;
 }
+function myCloseModal(str) {
+    flgModal.value = false;
+    // product = {};
+    console.log(str); // 파라미터 연습용
+}
+
+// ---------------------
+// Provide / Inject 연습
+// ---------------------
+const count = ref(0);
+function addCount() {
+    count.value++;
+}
+
+provide('test', {
+    count
+    ,addCount
+});
 
 </script>
 
