@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Exceptions\MyAutheException;
 use App\Exceptions\MyValidateException;
 use App\Models\User;
+use App\Utils\MyToken as UtilsMyToken;
 use MyUserValidate;
 use MyToken;
 use Illuminate\Http\Request;
@@ -13,18 +14,18 @@ use Illuminate\Support\Facades\Log;
 
 class UserController extends Controller
 {
-   public function login(Request $request) {
+    public function login(Request $request)
+    {
         Log::debug('start Login', $request->all());
 
         $requestData = [
-            'account' => $request->account
-            ,'password' => $request->password
+            'account' => $request->account, 'password' => $request->password
         ];
         // 유효성 검사
         $resultValidate = MyUserValidate::myValidate($requestData);
 
         // 유효성 검사 실패 처리
-        if($resultValidate->fails()) {
+        if ($resultValidate->fails()) {
             Log::debug('login Validation Error', $resultValidate->errors()->all());
             throw new MyValidateException('E01');
         }
@@ -33,13 +34,13 @@ class UserController extends Controller
         $resultUserInfo = User::where('account', $request->account)->withCount('boards')->first();
 
         // 미등록 유저 체크
-        if(!isset($resultUserInfo)) {
+        if (!isset($resultUserInfo)) {
             // 유저 없음
             throw new MyAutheException('E20');
         }
 
         // 패스워드 체크
-        if(!(Hash::check($request->password, $resultUserInfo->password))) {
+        if (!(Hash::check($request->password, $resultUserInfo->password))) {
             throw new MyAutheException('E21');
         }
 
@@ -50,12 +51,31 @@ class UserController extends Controller
         MyToken::updateRefreshToken($resultUserInfo, $refreshToken);
         // reponse Data
         $reponseData = [
-            'code' => '0'
-            ,'msg' => '인증 완료'
-            ,'accessToken' => $accessToken
-            ,'refreshToken' => $refreshToken
-            ,'data' => $resultUserInfo
+            'code' => '0', 'msg' => '인증 완료', 'accessToken' => $accessToken, 'refreshToken' => $refreshToken, 'data' => $resultUserInfo
         ];
         return response()->json($reponseData, 200);
-   }
+    }
+
+    /**
+     * 로그아웃
+     *
+     * @param Illuminate\Http\Request $request
+     *
+     * @return response() json
+     */
+    public function logout(Request $request) {
+        $id = MyToken::getValueInpayload($request->bearerToken(), 'idt');
+
+        $userInfo = User::find($id);
+
+        MyToken::removeRefreshToken($userInfo);
+
+        $responseData = [
+            'code' => '0'
+            ,'msg' => ''
+            ,'data' => $userInfo
+        ];
+
+        return response()->json($responseData, 200);
+    }
 }
