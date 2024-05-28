@@ -24,6 +24,7 @@
 <script setup>
 import { onBeforeMount, reactive, ref } from 'vue';
 import store from '../js/store';
+import router from '../js/router';
 
 // 모달 처리
 const modalFlg = ref(false);
@@ -47,33 +48,36 @@ onBeforeMount(() => {
 // 스크롤 이벤트(추가 게시글 획득)
 window.addEventListener('scroll', boardScrollEvent);
 
-let flg = true;
+let flg = true; // 디바운싱 처리를 위한 플래그
 function boardScrollEvent() {
-    console.log('보드 스크롤 이벤트 시작', store.state.noMoreBoardListFlg)
-    if(flg && !store.state.noMoreBoardListFlg) {
-        flg = false;
-
-        const docHeight = document.documentElement.scrollHeight; // 문서 기준 총Y축 길이
-        const winHeight = window.innerHeight; // 브라우저 창의 Y축 길이
-        const nowHeight = window.scrollY; // 현재 스크롤 위치
-        const viewHeight = docHeight - winHeight; // 끝까지 스크롤 했을 때의 Y축 위치
-        // console.log('문서 Y : ' + docHeight);
-        // console.log('윈도우 Y : ' + winHeight);
-        // console.log('현재 Y : ' + nowHeight);
-        // console.log('뷰 Y : ' + viewHeight);
-        // console.log('------------------------');
+    if(router.currentRoute.value.path == '/board') {
+        console.log('보드 스크롤 이벤트 시작', store.state.noMoreBoardListFlg)
+        if(flg && !store.state.noMoreBoardListFlg) {
+            flg = false;
+    
+            const docHeight = document.documentElement.scrollHeight; // 문서 기준 총Y축 길이
+            const winHeight = window.innerHeight; // 브라우저 창의 Y축 길이
+            const nowHeight = window.scrollY; // 현재 스크롤 위치
+            const viewHeight = docHeight - winHeight; // 끝까지 스크롤 했을 때의 Y축 위치
+            // console.log('문서 Y : ' + docHeight);
+            // console.log('윈도우 Y : ' + winHeight);
+            // console.log('현재 Y : ' + nowHeight);
+            // console.log('뷰 Y : ' + viewHeight);
+            // console.log('------------------------');
+            
+            // 스크롤이 최하단 일경우 처리
+            if(viewHeight <= nowHeight) {
+                store.dispatch('getAddBoardList');
+            }
+    
+            flg = true;
+        }
         
-        // 스크롤이 최하단 일경우 처리
-        if(viewHeight <= nowHeight) {
-            store.dispatch('getAddBoardList');
+        // 이벤트 제거 처리
+        if(store.state.noMoreBoardListFlg) {
+            window.removeEventListener('scroll', boardScrollEvent);
         }
 
-        flg = true;
-    }
-    
-    // 이벤트 제거 처리
-    if(store.state.noMoreBoardListFlg) {
-        window.removeEventListener('scroll', boardScrollEvent);
     }
 }
 </script>

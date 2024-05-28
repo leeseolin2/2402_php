@@ -1,6 +1,7 @@
 import { createWebHistory, createRouter } from 'vue-router';
 import LoginComponent from '../components/LoginComponent.vue';
 import BoardComponent from '../components/BoardComponent.vue';
+import RegisterComponent from '../components/RegisterComponent.vue';
 import BoardCreateComponent from '../components/BoardCreateComponent.vue';
 import store from './store'
 
@@ -12,7 +13,7 @@ function chkAuth(to, from, next) {
 }
 
 function chkAuthReturn(to, from, next) {
-    if(to.path === '/login' && store.state.authFlg) {
+    if((to.path === '/login' || to.path === '/register') && store.state.authFlg) {
         if(from.path === '/') {
             next('board');
         }
@@ -40,6 +41,11 @@ const routes = [
         path: '/create',
         component: BoardCreateComponent,
         beforeEnter: chkAuth,
+    },
+    {
+        path: '/register',
+        component: RegisterComponent,
+        beforeEnter: chkAuthReturn,
     },
 ];
 
