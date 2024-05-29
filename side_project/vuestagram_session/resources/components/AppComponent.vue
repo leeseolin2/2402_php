@@ -25,7 +25,7 @@
 
   <!-- Main -->
   <main>
-    <UserInfoComponent />
+    <UserInfoComponent v-if="$store.state.userInfo"/>
     <div class="container">
       <router-view></router-view>
     </div>
